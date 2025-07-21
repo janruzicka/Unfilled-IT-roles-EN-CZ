@@ -64,30 +64,19 @@
 
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <header class="text-center py-16 sm:py-24 relative">
-            <div class="absolute top-8 right-8 flex space-x-4">
+        <header class="text-center py-20 sm:py-32">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight">
+                Řešení neobsazených IT pozic / Solving unfilled IT positions
+            </h1>
+            <p class="mt-6 text-lg sm:text-xl text-slate-600">Vyberte si jazyk / Choose your language</p>
+            <div class="mt-8 flex justify-center items-center space-x-4">
                 <img src="https://flagcdn.com/w40/cz.png" srcset="https://flagcdn.com/w80/cz.png 2x" width="40" alt="Czech Flag" id="lang-cz" class="lang-switch-btn">
                 <img src="https://flagcdn.com/w40/gb.png" srcset="https://flagcdn.com/w80/gb.png 2x" width="40" alt="UK Flag" id="lang-en" class="lang-switch-btn">
-            </div>
-
-            <div class="max-w-2xl mx-auto">
-                 <img src="jr_cover_picture.jpg" alt="IT Consultant, Analyst, & Recruiter" class="w-full h-auto rounded-lg shadow-xl">
-            </div>
-
-            <div id="heading-cz">
-                <h1 class="mt-8 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight">
-                    Řešení neobsazených IT pozic
-                </h1>
-            </div>
-            <div id="heading-en">
-                <h1 class="mt-8 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight">
-                    Solving Unfilled IT Positions
-                </h1>
             </div>
         </header>
 
         <main>
-            <div id="cz-version">
+            <div id="cz-version" style="display: none;">
                 <p class="text-center mt-6 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto">
                     Nabízím vám unikátní poradenskou službu, která se zaměřuje na hloubkovou analýzu vašeho náborového procesu. Mým cílem je poskytnout vám komplexní řešení a strategii, jak efektivně přilákat a udržet ty nejlepší IT talenty a zároveň vybavit váš tým pro řešení budoucích výzev.
                 </p>
@@ -223,7 +212,7 @@
                 </footer>
             </div>
 
-            <div id="en-version">
+            <div id="en-version" style="display: none;">
                  <p class="text-center mt-6 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto">
                     I offer a unique consulting service focused on in-depth analysis of your recruitment process. My goal is to provide you with a comprehensive solution and strategy to effectively attract and retain the best IT talents, while equipping your team to tackle future challenges.
                 </p>
@@ -366,33 +355,27 @@
             
             const czVersion = document.getElementById('cz-version');
             const enVersion = document.getElementById('en-version');
-            const headingCz = document.getElementById('heading-cz');
-            const headingEn = document.getElementById('heading-en');
             const btnCz = document.getElementById('lang-cz');
             const btnEn = document.getElementById('lang-en');
 
             function showCzVersion() {
                 czVersion.style.display = 'block';
-                headingCz.style.display = 'block';
                 enVersion.style.display = 'none';
-                headingEn.style.display = 'none';
                 document.documentElement.lang = 'cs';
-                 czVersion.scrollIntoView({ behavior: 'smooth' });
+                czVersion.scrollIntoView({ behavior: 'smooth' });
             }
 
             function showEnVersion() {
                 enVersion.style.display = 'block';
-                headingEn.style.display = 'block';
                 czVersion.style.display = 'none';
-                headingCz.style.display = 'none';
                 document.documentElement.lang = 'en';
-                 enVersion.scrollIntoView({ behavior: 'smooth' });
+                enVersion.scrollIntoView({ behavior: 'smooth' });
             }
             
             btnCz.addEventListener('click', showCzVersion);
             btnEn.addEventListener('click', showEnVersion);
 
-            // Set initial state
+            // Set initial state to CZ
             showCzVersion();
 
 
